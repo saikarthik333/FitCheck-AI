@@ -1,0 +1,304 @@
+/* --- General Styles --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0fdf4; /* Updated */
+    color: #334155;
+    margin: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800; /* Bolder font weight for more impact */
+    color: #15803d;   /* Changed to a deep theme green */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* --- Upload Area --- */
+.upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.upload-area input[type="file"] {
+    display: none;
+}
+
+.upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #475569;
+}
+
+.upload-label .icon {
+    margin-right: 0.5rem;
+}
+
+.file-drop-zone {
+    border: 2px dashed #cbd5e1;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.file-drop-zone:hover {
+    background-color: #f0fdf4; 
+    border-color: #4ade80; 
+}
+
+/* --- NEW: Visual feedback for drag-and-drop --- */
+.file-drop-zone.drag-over {
+    background-color: #dcfce7;
+    border-color: #16a34a;
+    border-style: solid;
+}
+
+.upload-instructions strong {
+    color: #15803d; 
+}
+
+.file-types {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
+.preview-container {
+    width: 100%;
+    height: 100%;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0.75rem;
+}
+
+/* --- NEW: Instructions Box --- */
+.instructions-box {
+    background-color: #dcfce7; 
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #bbf7d0; 
+}
+
+.instructions-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: #334155;
+}
+
+.instructions-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.instructions-box li {
+    margin-bottom: 0.25rem;
+}
+
+
+/* --- Button --- */
+.button-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#generate-btn {
+    background-color: #22c55e; 
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+#generate-btn:hover:not(:disabled) {
+    background-color: #16a34a; 
+    transform: translateY(-2px);
+}
+
+#generate-btn:disabled {
+    background-color: #86efac; 
+    cursor: not-allowed;
+}
+
+#generate-btn #sparkle-icon {
+    margin-right: 0.5rem;
+}
+
+/* --- Result and Loading --- */
+.result-container {
+    background-color: #dcfce7; 
+    border-radius: 1rem;
+    padding: 1rem;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#result-image {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #bbf7d0; 
+    border-top-color: #22c55e; 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* --- NEW: Post-Generation and Feedback Styles --- */
+.post-generation-actions {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.retry-note {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.feedback-section p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    margin: 0 0 0.5rem 0;
+}
+
+.feedback-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.feedback-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.feedback-btn:hover {
+    transform: scale(1.15);
+    background-color: #cbd5e1;
+}
+
+.feedback-thanks {
+    font-size: 0.9rem;
+    color: #16a34a;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+footer .footer-links svg {
+    width: 20px;
+    height: 20px;
+    fill:  #88e9ab;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .upload-grid {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+}
+
