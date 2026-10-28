@@ -34,7 +34,7 @@ SYSTEM_PROMPT = """You are a specialized AI photo editor for virtual try-ons. Yo
 3.  Perform the try-on: Realistically fit the extracted garment onto the person from the User Photo. The clothing must conform to their pose, creating natural folds and shadows that match the lighting in the User Photo. This is a REPLACEMENT of their original clothing, not a style transfer.
 4.  Produce the final image.
 
-**Output:** A single, clean, photorealistic image of the person from the User Photo now wearing the new outfit. No text, no artifacts, no borders."""
+**Output:** A single, clean, photorealistic image of the person from the User Photo(Image 1) now wearing the new outfit(Image 2). No text, no artifacts, no borders."""
 
 
 def file_to_base64(file_storage):
