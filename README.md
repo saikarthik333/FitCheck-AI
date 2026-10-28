@@ -9,7 +9,7 @@ You can try the live application here:
 
 ## 💡 The Problem
 
-Online clothes shopping has one big problem: "Will this actually look good on me?" This project was born from a personal frustration I've had for years. FitCheck AI is a tool I built to fix this, helping you visualize your fit *before* you buy, just in time for festive shopping.
+Online clothes shopping has one big problem: "Will this actually look good on me?" This project was born from a personal frustration I've had for years. FitCheck AI is a tool I built to fix this, helping you visualize your fit *before* you buy.
 
 ## ✨ Features
 
